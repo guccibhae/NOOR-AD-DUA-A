@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; URL='/'" />
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      // Force-load index.html and let JS handle routing
+      const path = window.location.pathname;
+      sessionStorage.setItem("redirectPath", path);
+      window.location.href = "/";
+    </script>
   </head>
   <body>
     <p>Redirecting...</p>

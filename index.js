@@ -88,5 +88,12 @@ window.addEventListener("scroll", () => {
 scrollToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
-
+// Handle redirect from 404.html
+const redirectPath = sessionStorage.getItem("redirectPath");
+if (redirectPath) {
+  sessionStorage.removeItem("redirectPath");
+  history.replaceState(null, "", redirectPath);
+  // Now you can call the function that renders the correct category
+  showCategoryFromURL(); // Or whatever function you’re using
+}
 
